@@ -16,5 +16,10 @@
     "node-id3": "^0.1.17",
     "oauth": "^0.9.15",
     "string-similarity": "^4.0.1"
+  },
+  "prettier": {
+    "jsxBracketSameLine": true,
+    "singleQuote": true,
+    "printWidth": 120
   }
 }

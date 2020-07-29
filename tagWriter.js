@@ -30,7 +30,7 @@ class TagApi {
       throw new Error("Invalid tags object passed");
     }
     this.buffer = NodeID3.update(tags, this.buffer);
-    console.log(`Tags written to buffer: ${JSON.stringify(tags)}`);
+    // console.log(`Tags written to buffer: ${JSON.stringify(tags)}`);
   }
 
   async writeFile(dir = this.dir, filename = this.filename) {
@@ -45,7 +45,7 @@ class TagApi {
       return filePath;
     } catch (err) {
       // console.log(err.toString());
-      console.log(`Dir ${dir} does not exist. Creating...`);
+      // console.log(`Dir ${dir} does not exist. Creating...`);
       //Создаем директорию, если её нет и перезапускаем функцию
       await fs.mkdirAsync(dir, { recursive: true });
       return this.writeFile(dir, filename);
