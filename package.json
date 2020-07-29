@@ -1,0 +1,20 @@
+{
+  "name": "bp-tag-grabber",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bluebird": "^3.7.2",
+    "got": "^11.5.1",
+    "mp3-duration": "^1.1.0",
+    "node-id3": "^0.1.17",
+    "oauth": "^0.9.15",
+    "string-similarity": "^4.0.1"
+  }
+}
