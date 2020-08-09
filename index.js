@@ -4,6 +4,9 @@ const analyzer = require("./analyzer");
 const Bluebird = require("bluebird");
 const unlinkAsync = Bluebird.promisify(fs.unlink);
 
+//https://www.npmjs.com/package/seratojs
+//https://developer.spotify.com/documentation/web-api/reference/tracks/get-audio-features/
+
 (async () => {
   let [scriptDir, fullPath, workingDir] = process.argv;
   if (!workingDir) {
@@ -20,7 +23,7 @@ const unlinkAsync = Bluebird.promisify(fs.unlink);
         await analyzer({
           filename,
           dir: workingDir,
-          saveToDir: path.join(workingDir, "Tagged", date.toISOString()),
+          saveToDir: path.join(workingDir, "Tagged"),
           subfolders: true
         });
         console.log(`File ${filename} reworked and saved. Original file removed.`);
@@ -43,6 +46,6 @@ const unlinkAsync = Bluebird.promisify(fs.unlink);
         );
       }
     },
-    { concurrency: 1 }
+    { concurrency: 100 }
   );
 })();

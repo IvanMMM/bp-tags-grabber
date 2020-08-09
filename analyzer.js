@@ -28,7 +28,7 @@ async function rewriteTags({ filename, dir = __dirname, saveToDir = __dirname, s
     //Проверяем совпадение по продолжительности
     .filter(track => {
       const diff = relDiff(track.duration.milliseconds, file.durationMs);
-      return diff < 0.1;
+      return diff < 1; // 1 процент
     })
     //По имени
     .filter(track => {
